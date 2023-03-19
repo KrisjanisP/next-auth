@@ -16,6 +16,7 @@ export default function Login() {
         if(response.ok){
             const result = await response.json();
             if(result.error) {
+                setSuccess(false);
                 setError(result.error);
                 return;
             }
@@ -30,7 +31,7 @@ export default function Login() {
             <EmailInput value={email} onChange={setEmail}/>
             <UsernameInput value={username} onChange={setUsername}/>
             <PasswordInput value={password} onChange={setPassword}/>
-            {error}
+            {error && <p>{error}</p>}
             {success && <p>Login was succesful.</p>}
             <br/>
             <button type="submit">Submit</button>
