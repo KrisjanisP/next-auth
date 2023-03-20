@@ -32,4 +32,8 @@ export class ApiRequestValidator {
     invalidLoginRequest(email: string, username: string, password: string):boolean {
         return this.invalidEmail(email)||this.invalidUsername(username)||this.invalidPassword(password);
     }
+
+    invalidRegisterRequest(email: string, username: string, password: string):boolean {
+        return this.invalidEmail(email)||this.invalidUsername(username)||this.invalidPassword(password);
+    }
 }
