@@ -7,3 +7,5 @@ sequelize.define("User", {
   email: DataTypes.STRING,
   password: DataTypes.STRING,
 });
+
+export default sequelize
