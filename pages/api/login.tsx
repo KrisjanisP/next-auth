@@ -1,5 +1,5 @@
 import {NextApiRequest, NextApiResponse} from 'next';
-import {ApiRequestValidator} from '../../utils/validator';
+import {ApiRequestValidator} from '@/utils/validator';
 
 export default function login(req: NextApiRequest, resp: NextApiResponse) {
     console.log("login request: ", req.body)

@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import { postJson } from '@/utils/post-json';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -67,13 +68,4 @@ function PasswordInput({value, onChange}: {value: string, onChange: (e: any) => 
             <input id="password" type="password" value={value} onChange={(e)=>onChange(e.target.value)} required/>
         </div>
     )
-}
-
-async function postJson(url:string, json:string) {
-    let options:RequestInit = {};
-    options.method = 'POST';
-    options.headers = {'Content-Type':'application/json'};
-    options.body = json;
-    let result = fetch("/api/login",options);
-    return result;
 }
